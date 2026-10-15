@@ -118,10 +118,12 @@ def describe_song(song):
     Returns (str): "<title> (<album>) - <minutes>:<seconds>", with the
         seconds always shown as two digits (3:09, not 3:9).
     """
-    title, seconds, album, rating = song          # BUG: check the order!
+    title, album, seconds, rating = song          # BUG: check the order!
     minutes = seconds // 60
     leftover = seconds % 60
     return f"{title} ({album}) - {minutes}:{leftover:02d}"
+
+print(describe_song(("Shake It Off", "1989", 219, 4.5)))
 
 
 # ---------------------------------------------------------------------------
